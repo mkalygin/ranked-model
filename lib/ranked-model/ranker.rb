@@ -66,7 +66,7 @@ module RankedModel
         #
         instance_class.
           where(instance_class.primary_key => instance.id).
-          update_all([%Q{#{ranker.column} = ?}, value])
+          update_all(ranker.column => value)
       end
 
       def position
